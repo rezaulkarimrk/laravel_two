@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+ use App\Http\Controllers\Admin\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('category/index', [CategoriesController::class, 'index'])->name('category.index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
