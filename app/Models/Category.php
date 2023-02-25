@@ -12,4 +12,9 @@ class Category extends Model
     //     'category_name',
     //     'category_slug',
     // ];
+
+    protected $fillable =[
+        'category_name',
+        'category_slug',
+    ];
 }
