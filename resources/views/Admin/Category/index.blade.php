@@ -5,7 +5,7 @@
                 <div class="card" >
                     <div class="card-header"><h2>{{__('All Category')}}</h2></div>
                     <div class="card-body" >
-                        <a href="{{route('category.index')}}" class="btn btn-info btn-sm " >Add Category</a>
+                        <a href="{{route('category.create')}}" class="btn btn-info btn-sm " >Add Category</a>
                         <br/>
                         <table>
                             <thead>
@@ -24,7 +24,7 @@
                                     <td>{{$row->category_slug}}</td>
                                     <td>
                                         <a href="" class="btn btn-sm btn-info" >Edit</a>
-                                        <a href="" class="btn btn-sm btn-info" >Delete </a>
+                                        <a href="" class="btn btn-sm btn-danger" >Delete </a>
                                     </td>
                                 </tr>
                                 @endforeach
