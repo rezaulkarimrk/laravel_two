@@ -5,7 +5,7 @@
                 <div class="card" >
                     <div class="card-header"><h2>{{__('Dashboard')}}</h2></div>
                     <div class="card-body" >
-                        <a href="{{route('category.index')}}" >All Category</a>
+                        <a href="{{route('category.index')}}" class="btn btn-info btn-sm " >All Category</a>
                         <br/>
                         @if(session('status'))
                             <div class="alert alert success" role="alert" >
