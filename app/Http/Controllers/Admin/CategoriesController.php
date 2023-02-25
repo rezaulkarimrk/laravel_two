@@ -43,12 +43,16 @@ class CategoriesController extends Controller
 
         return redirect()->back();
     }   
+
+    // edit methode
     public function edit( $id){
         // $data = DB::table('categories')->where('id', $id)->first();
         // $data = Category::find($id);
         $data = Category::where('id', $id)->first();
         return view('Admin.Category.edit', compact('data'));
     }
+
+    // update methode
     public function update(Request $request, $id){
         $category = Category::find($id);
         // $category->update([
@@ -58,9 +62,19 @@ class CategoriesController extends Controller
 
         $category->category_name = $request->category_name;
         $category->category_slug = Str::of($request->category_name)->slug('-');
-
         $category->save();
 
         return redirect()->route('category.index');
+    }
+
+    public function destroy( $id)
+    {
+        // DB::table('categories')->where('id', $id)->delete();
+
+        // $category = Category::find($id);
+        // $category->delete();
+        Category::destroy($id);
+
+        return redirect()->back();
     }
 }

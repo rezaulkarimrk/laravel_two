@@ -23,6 +23,7 @@ Route::get('category/create', [CategoriesController::class, 'create'])->name('ca
 Route::post('category/store', [CategoriesController::class, 'store'])->name('category.store');
 Route::get('category/edit/{id}', [CategoriesController::class, 'edit'])->name('category.edit');
 Route::post('category/update/{id}', [CategoriesController::class, 'update'])->name('category.update');
+Route::get('category/delete/{id}', [CategoriesController::class, 'destroy'])->name('category.delete');
 
 
 
