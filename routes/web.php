@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return view('layouts.app');
 });
+
+// Auth::routes(['register'=>false]);
 
 Route::get('category/index', [CategoriesController::class, 'index'])->name('category.index');
 Route::get('category/create', [CategoriesController::class, 'create'])->name('category.create');
@@ -41,7 +44,9 @@ Route::get('category/delete/{id}', [CategoriesController::class, 'destroy'])->na
 
 
 
-
+// Route::get('login', function(){
+//     return "Logiin";
+// })->name('login');
 
 
 
