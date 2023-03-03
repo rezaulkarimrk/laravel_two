@@ -1,6 +1,8 @@
-<x-app-layout>
-    <div class="container">
+@extends('layouts.app')
+@section('content')
+    <div class="container mt-2 ">
         <div class="row justify-content-center">
+            <div class="col-md-2" ></div>
             <div class="col-md-8" >
                 <div class="card" >
                     <div class="card-header"><h2>{{__('Add New Category')}}</h2></div>
@@ -27,4 +29,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection
