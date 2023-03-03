@@ -64,7 +64,8 @@ class CategoriesController extends Controller
         $category->category_slug = Str::of($request->category_name)->slug('-');
         $category->save();
 
-        return redirect()->route('category.index');
+        $notification=array('messege'=> 'Category Updated!', 'alert-type' => 'success');
+        return redirect()->route('category.index')->with($notification);
     }
 
     public function destroy( $id)
