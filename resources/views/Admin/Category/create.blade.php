@@ -5,7 +5,6 @@
             <div class="col-md-2" ></div>
             <div class="col-md-8" >
                 <div class="card" >
-                    <div class="card-header"><h2>{{__('Add New Category')}}</h2></div>
                     <div class="card-body" >
                         <a href="{{route('category.index')}}" class="btn btn-info btn-sm " >All Category</a>
                         <br/>

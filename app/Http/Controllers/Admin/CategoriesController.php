@@ -40,8 +40,8 @@ class CategoriesController extends Controller
             'category_name' => $request->category_name,
             'category_slug' => Str::of($request->category_name)->slug('-'),
         ]);
-
-        return redirect()->back();
+        $notification=array('messege'=> 'Category Inserted', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
     }   
 
     // edit methode
