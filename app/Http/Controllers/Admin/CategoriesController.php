@@ -67,9 +67,8 @@ class CategoriesController extends Controller
         $notification=array('messege'=> 'Category Updated!', 'alert-type' => 'success');
         return redirect()->route('category.index')->with($notification);
     }
-
-    public function destroy( $id)
-    {
+    //delete methode
+    public function destroy( $id){
         // DB::table('categories')->where('id', $id)->delete();
 
         // $category = Category::find($id);

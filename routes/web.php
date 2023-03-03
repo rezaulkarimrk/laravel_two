@@ -30,8 +30,12 @@ Route::post('category/update/{id}', [CategoriesController::class, 'update'])->na
 Route::get('category/delete/{id}', [CategoriesController::class, 'destroy'])->name('category.delete');
 
 // Sub-Categorys subcategory.store
+Route::get('subcategory/index', [SubcategoryController::class, 'index'] )->name('subcategory.index');
 Route::get('subcategory/create', [SubcategoryController::class, 'create'])->name('subcategory.create');
 Route::post('subcategory/store', [SubcategoryController::class, 'store'])->name('subcategory.store');
+Route::get('subcategory/delete/{id}', [SubcategoryController::class, 'destroy' ])->name('subcategory.delete');
+Route::get('subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->name('subcategory.edit');
+Route::get('subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('subcategory.update');
 
 
 
