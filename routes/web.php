@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
- use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\SubcategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,10 @@ Route::post('category/store', [CategoriesController::class, 'store'])->name('cat
 Route::get('category/edit/{id}', [CategoriesController::class, 'edit'])->name('category.edit');
 Route::post('category/update/{id}', [CategoriesController::class, 'update'])->name('category.update');
 Route::get('category/delete/{id}', [CategoriesController::class, 'destroy'])->name('category.delete');
+
+// Sub-Categorys subcategory.store
+Route::get('subcategory/create', [SubcategoryController::class, 'create'])->name('subcategory.create');
+Route::post('subcategory/store', [SubcategoryController::class, 'store'])->name('subcategory.store');
 
 
 
