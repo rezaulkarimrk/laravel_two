@@ -116,7 +116,7 @@
 <script src="{{asset('backend')}}/plugins/sweetalert2/sweetalert2.min.js"></script>
 {{-- Anything Delete --}}
 <script>
-  $(document).on("click", "#delete", function(e)){
+  $(document).on("click", ".delete", function(e)){
     e.preventDefault();
     var link = $(this).atr("href");
       swal({

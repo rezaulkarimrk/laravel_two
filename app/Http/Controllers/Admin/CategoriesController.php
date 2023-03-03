@@ -75,6 +75,7 @@ class CategoriesController extends Controller
         // $category->delete();
         Category::destroy($id);
 
-        return redirect()->back();
+        $notification=array('messege'=> 'Category Deleted', 'alert-type' => 'warning');
+        return redirect()->back()->with($notification);
     }
 }
