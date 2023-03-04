@@ -17,4 +17,9 @@ class Category extends Model
         'category_name',
         'category_slug',
     ];
+
+    public function setCategoryNameAttribute($value)
+    {
+        $this->attributes['category_name'] = ucfirst($value);
+    }
 }

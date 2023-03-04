@@ -18,6 +18,22 @@ class CategoriesController extends Controller
         // Model
         $category = Category::all();
         return view('Admin.Category.index', compact('category'));
+
+        // colection
+        // $avarage = collect([1, 1, 2, 4])->avg();
+        // return $avarage;
+
+        // $collections = collect([1, 2, 3, 4, 5, 6, 7, ]);
+        // $chunks = $collections->chunk(4);
+        // return $chunks;
+
+        // $collections = collect([
+        //     [1, 2, 3],
+        //     [4, 5, 6],
+        //     [7, 8, 9],
+        // ]);
+        // $collapsed = $collections->collapse();
+        // return $collapsed;
     }
     //create Method
     public function create()
@@ -31,15 +47,15 @@ class CategoriesController extends Controller
             'category_name'=> 'required| unique:categories| max:255'
         ]);
 
-        // $category = new Category;
-        // $category->category_name=$request->category_name;
-        // $category->category_slug= Str::of($request->category_name)->slug('-');
-        // $category->save();
+        $category = new Category;
+        $category->category_name=$request->category_name;
+        $category->category_slug= Str::of($request->category_name)->slug('-');
+        $category->save();
 
-        Category::insert([
-            'category_name' => $request->category_name,
-            'category_slug' => Str::of($request->category_name)->slug('-'),
-        ]);
+        // Category::insert([
+        //     'category_name' => $request->category_name,
+        //     'category_slug' => Str::of($request->category_name)->slug('-'),
+        // ]);
         $notification=array('messege'=> 'Category Inserted', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }   
