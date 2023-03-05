@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +40,8 @@ Route::get('subcategory/update/{id}', [SubcategoryController::class, 'update'])-
 
 
 
-
+// Post Rroute //
+Route::get('post/create', [PostController::class, 'create'])->name('post.create');
 
 
 
