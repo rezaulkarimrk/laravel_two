@@ -42,6 +42,7 @@ Route::get('subcategory/update/{id}', [SubcategoryController::class, 'update'])-
 
 // Post Rroute //
 Route::get('post/create', [PostController::class, 'create'])->name('post.create');
+Route::post('post/store', [PostController::class, 'store'])->name('post.store');
 
 
 
