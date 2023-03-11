@@ -11,7 +11,7 @@ use Auth;
 use Image;
 use App\Models\Post;
 use File;
-
+use App\Events\PostProcessed;
 
 class PostController extends Controller
 {
@@ -50,7 +50,7 @@ class PostController extends Controller
 
         ]);
 
-        $subcategoryId=DB::table('subcategories')->where('id', $request->subcategory_id)->first()->category_id;
+        $categoryId=DB::table('subcategories')->where('id', $request->subcategory_id)->first()->category_id;
         $slug = Str::of($request->title)->slug('-');
 
         $data = array();
@@ -64,6 +64,10 @@ class PostController extends Controller
         $data['user_id'] =Auth::id();
         $data['status'] = $request->status;
         $photo = $request->image;
+
+        // event Calling
+        $eData = ['title' => $request->title, 'date'=> date('d F Y', strtotime($request->post_date))];
+        event(new PostProcessed($eData));
         if($photo){
             $photoName = $slug.'.'.$photo->getClientOriginalExtension();
             Image::make($photo)->resize(400, 400)->save('public/media'.$photoName);
