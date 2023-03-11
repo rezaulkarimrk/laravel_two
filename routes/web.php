@@ -44,7 +44,9 @@ Route::get('subcategory/update/{id}', [SubcategoryController::class, 'update'])-
 Route::get('post/index', [PostController::class, 'index'])->name('post.index');
 Route::get('post/create', [PostController::class, 'create'])->name('post.create');
 Route::post('post/store', [PostController::class, 'store'])->name('post.store');
-
+Route::get('post/delete/{id}', [PostController::class, 'destroy'])->name('post.delete');
+Route::get('post/edite/{id}', [PostController::class, 'edit'])->name('post.edit');
+Route::post('post/update/{id}', [PostController::class, 'update'])->name('post.update');
 
 
 
