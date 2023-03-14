@@ -4,14 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
-use App\Models\Category;
 use Illuminate\Support\Str;
-use Auth;
-use Image;
-use App\Models\Post;
-use File;
 use App\Events\PostProcessed;
+use App\Models\{Category, Subcategory, Post};
+use DB, Auth, Image, File;
+
 
 class PostController extends Controller
 {

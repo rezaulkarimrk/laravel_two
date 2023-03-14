@@ -8,6 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 
 use Auth;
 use App\Mail\UserMail;
+use App\Models\User;
 
 class SendPostNotification
 {

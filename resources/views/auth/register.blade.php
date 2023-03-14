@@ -68,6 +68,21 @@
                     </label>
                   </div>
                 </div>
+
+                <div class="form-group{{ $errors->has('CapthaCode')? 'has-error' : ''}}" >
+                  <label class="col-md-4 control-label">Captcha</label>
+
+                  <div class="col-md-6" >
+                    {!! captcha_image_html('ExampleCaptcha') !!}
+                    <input class="form-control" type="text" id="CaptchaCode" name="CaptchaCode" />
+                    @if($error->has('CaptchaCode'))
+                    <span class="help-block" >
+                      <strong>{{$errors->first('CaptchaCode')}}</strong>
+                    </span>
+                    @endif
+                  </div>
+                </div>
+
                 <!-- /.col -->
                 <div class="col-4">
                   <button type="submit" class="btn btn-primary btn-block">Register</button>

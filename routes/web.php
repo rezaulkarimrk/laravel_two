@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\FrondendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,11 +17,14 @@ use App\Http\Controllers\Admin\PostController;
 |
 */
 
-Route::get('/', function () {
-    // dd(App());
-    return view('welcome');
-    // return view('layouts.app');
-});
+// Route::get('/', function () {
+//     // dd(App());
+//     return view('welcome');
+//     // return view('layouts.app');
+// });
+
+Route::get('/', [FrondendController::class, 'index']);
+
 
 // Auth::routes(['register'=>false]);
 // categour route
